@@ -1,0 +1,1 @@
+SELECT * FROM 091224ptm_Sergii.Competencies;
