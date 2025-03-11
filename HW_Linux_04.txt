@@ -1,0 +1,5 @@
+date > file
+df -h | grep -w / | awk '{print $5}' >> file
+history | tail -n 3 >> file
+cat /etc/passwd | grep "cron" >> file
+
