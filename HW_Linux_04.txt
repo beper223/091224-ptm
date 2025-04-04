@@ -1,5 +1,8 @@
-date > file
-df -h | grep -w / | awk '{print $5}' >> file
-history | tail -n 3 >> file
-cat /etc/passwd | grep "cron" >> file
+date > file.txt
+df -h | grep -w / | awk '{print $5}' >> file.txt
+history | tail -n 3 >> file.txt
+cat /etc/passwd | grep -w "cron" >> file.txt
+cat /etc/group | grep -c "root" >> file.txt
+
+history > /tmp/history.txt && export_file /tmp/history.txt
 
