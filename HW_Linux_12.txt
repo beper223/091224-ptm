@@ -1,0 +1,13 @@
+git clone git@github.com:beper223/git-feature.git
+cd git-feature/
+git checkout -b feature
+git add .
+git commit -m "add readme.md"
+git push --set-upstream origin feature
+git commit --amend
+insert -> Esc -> :wq+Enter
+git checkout main
+git merge feature
+git add .
+git commit -m "history.txt"
+git push

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+mkdir -p /opt/091224-ptm/Zashalovskiy/dir1
+mkdir -p /opt/091224-ptm/Zashalovskiy/dir2
+
+for i in {1..100}; do
+  touch /opt/dir1/$RANDOM
+done
+
+for file in /opt/dir1/*; do
+  filename=$(basename "$file")
+
+  if ((filename % 2 == 0)); then
+    mv "$file" /opt/dir2/
+  fi
+done

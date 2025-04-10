@@ -1,0 +1,28 @@
+как объявить системную переменную и присвоить ей значение
+export MY_SYSTEM_VAR="some_value"
+
+как вывести значение системной переменной
+echo $MY_SYSTEM_VAR
+
+создает скрытый файл
+touch .myfile
+
+рекурсивно создает все папки
+sudo mkdir -p /opt/091224-ptm/Zashalovskiy
+
+рекурсивно устанавливает владельца и группу на всё содержимое папки
+sudo chown -R user:user /opt/091224-ptm
+
+выводит количество процессов (без учета заголовков), запущенных под пользователем root
+ps -u root --no-headers | wc -l
+
+задача 06
+export ZASHALOVSKIY_VARIABLE="091224-ptm"
+touch /opt/091224-ptm/Zashalovskiy/.process_management
+cd /opt/091224-ptm/Zashalovskiy/
+date >> .process_management
+echo "Welcome to Amazon server" >> .process_management
+cat /proc/meminfo | grep "MemTotal" | awk '{print $2, $3}' >> .process_management
+ps -u root --no-headers | wc -l >> .process_management
+env | grep -w "ZASHALOVSKIY_VARIABLE" >> .process_management
+ps -eo pid,ppid,command | grep '[s]shd -D' | awk '{print "PID", $1, "PPID",$2}' >> .process_management

@@ -1,0 +1,7 @@
+#!/bin/bash
+#
+date
+echo "Hello $USER!"
+echo "Скрипт запущен из директории: $(pwd)"
+ps -ef | grep bioset | grep -v grep | wc -l
+ls -l /etc/passwd | awk '{print $1}'

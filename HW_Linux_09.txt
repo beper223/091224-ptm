@@ -1,0 +1,25 @@
+1. Создайте файл myfirstbashscript.sh где угодно.
+2. Сделайте его исполняемым.
+3. Заведите новую переменную USER и присвойте ей ваше имя в качестве значения
+4. Добавьте в скрипт все необходимое, чтобы он :
+- Написал дату
+- Поприветствовал Вас по имени ( hello $USER!)
+- Написал, из какой директории он работает
+- Добавил количество процессов с именем bioset одним числом (не учитывая процесс grep)
+- Вывел права на файл /etc/passwd в формате (-rw-r--r--) - и только эту часть (потребуется awk)
+
+Экспортируйте и пришлите результирующий файл, желательно в формате txt
+
+Что вам понадобится:
+echo, pwd, ps -ef, date, grep (и флаг -v не забываем! ), wc -l, awk '{print $НОМЕР СТОЛБЦА}' , export_file
+
+touch myfirstbashscript.sh
+chmod +x myfirstbashscript.sh
+export USER="Zashalovskiy"
+
+nano
+#!/bin/bash
+echo "hello $USER!"
+echo "echo Скрипт запущен из директории: $(pwd)"
+ps -ef | grep bioset | grep -v grep | wc -l
+ls -l /etc/passwd | awk '{print $1}'

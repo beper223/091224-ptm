@@ -1,0 +1,35 @@
+Создайте папку со своим именем в на сервере linux.itcareerhub.de. В папке с Вашим именем создайте скрипт task_NAME.sh, где NAME - Ваше имя.
+Скрипт должен создавать по 10 файлов с порядковым номером и датой создания. 1_20.04.23 , 2_20.04.23 , 3_20.04.23 .. 10_20.04.23
+Создайте в планировщике новое задание, которое должно будет запускать Ваш скрипт каждые 15 минут.
+Создайте архив с файлами из п2. , добавьте в него историю команд, которую вы выполнили. 
+Закомментируйте строку с заданием в планировщике (добавьте # в начало строки с вашим заданием), чтобы выключить задание, но оставить его “в быстром доступе”
+
+Что пригодится:
+date +"%d.%m.%y", touch, export EDITOR=nano, crontab -l, crontab -e, Crontab.guru
+
+Однострочник, создающий простейший скрипт в /tmp , который надо будет редактировать дальше:
+echo -e `#!/bin/bash\n date\n echo “it works!“` > /tmp/script.sh
+
+создает архив с именем "archive_ДАТА_ВРЕМЯ_.tar", который будет содержать все файлы из папки /path/to/files
+tar -cf "archive_$(date +'%Y-%m-%d_%H-%M-%S').tar" /path/to/files
+
+/opt/091224-ptm/Zashalovskiy/task_Sergii.sh >> /opt/091224-ptm/Zashalovskiy/script.log 2>>&1
+tar -rf archive_2025-03-26_11-24-49.tar history.txt
+tar -cf archive.tar /opt/091224-ptm/Zashalovskiy/Sergii/ /opt/091224-ptm/Zashalovskiy/history.txt
+
+    1  cd /opt/091224-ptm/Zashalovskiy/
+    2  mkdir Sergii
+    3  nano task_Sergii.sh
+    4  chmod +x task_Sergii.sh
+    5  ./task_Sergii.sh
+    6  ls -al
+    7  crontab -e
+    8  crontab -l
+    9  history > history.txt
+   10  tar -cf archive.tar /opt/091224-ptm/Zashalovskiy/Sergii/ /opt/091224-ptm/Zashalovskiy/history.txt
+   11  tar -tf archive.tar
+   12  crontab -e
+   13  crontab -l
+   14  history > history2.txt
+
+
