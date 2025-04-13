@@ -7,8 +7,8 @@ def fibonacci_generator():
         a, b = b, a + b
 
 if __name__ == "__main__":
-    N = int(input("Введите количество чисел Фибоначчи для вывода: "))
+    N = int(input("Введите количество чисел Фибоначчи: "))
     fib_gen = fibonacci_generator()
-
+    print(f'Первые {N} чисел Фибоначчи: ')
     for _ in range(N):
         print(next(fib_gen))
