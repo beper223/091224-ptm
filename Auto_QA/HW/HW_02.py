@@ -6,9 +6,10 @@ from selenium.webdriver.common.by import By
 from time import sleep
 from datetime import datetime
 
-service = Service("c:\\dist\\chromedriver-win64\\chromedriver.exe")
+#service = Service("c:\\dist\\chromedriver-win64\\chromedriver.exe")
+service = Service("c:\\dist\\geckodriver.exe")
 options = Options()
-driver = webdriver.Chrome(service=service, options=options)
+driver = webdriver.Firefox(service=service, options=options)
 driver.get("https://itcareerhub.de/ru")
 sleep(3)
 about_link = driver.find_element(By.LINK_TEXT, "Новости")
